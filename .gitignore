@@ -1,0 +1,36 @@
+# Ignore node_modules and dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Ignore build files
+dist/
+build/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore environment files
+.env
+.env.local
+.env.*.local
+
+# Ignore compiled files
+*.class
+*.pyc
+*.o
+
+# Ignore images and assets (optional, if not needed in the repo)
+images/thumbs/

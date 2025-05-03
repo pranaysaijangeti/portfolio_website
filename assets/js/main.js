@@ -91,7 +91,13 @@
 				usePopupCaption: true,
 				popupLoaderText: '',
 				windowMargin: 50,
-				usePopupNav: true
+				usePopupNav: true,
+				selector: 'a:not(.no-lightbox)', // Exclude links with the "no-lightbox" class
+			});
+
+			// Prevent poptrox from handling "no-lightbox" links
+			$gallery.find('a.no-lightbox').on('click', function (e) {
+				e.stopPropagation(); // Prevent the click event from propagating to poptrox
 			});
 
 			// Hack: Adjust margins when 'small' activates.

@@ -999,6 +999,13 @@ input, select, textarea {
 				width: auto;
 			}
 
+		.image img {
+			width: 100%; /* Ensure the image fills the container width */
+			height: 200px; /* Set a fixed height for all images */
+			object-fit: cover; /* Maintain aspect ratio and crop excess */
+			border-radius: 5px; /* Optional: Add rounded corners */
+		}
+
 /* List */
 
 	ul.default {
@@ -1824,6 +1831,44 @@ input, select, textarea {
 
 		}
 
+	.gallery .image .project-link {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+		color: #fff; /* White text color */
+		text-decoration: none;
+		padding: 0.5em 1em;
+		font-size: 1em;
+		opacity: 0; /* Initially hidden */
+		transition: opacity 0.3s ease, transform 0.3s ease;
+		text-align: center;
+		border-radius: 5px; /* Optional: Rounded corners */
+		box-shadow: none; /* Remove any shadow */
+		margin: 0; /* Ensure no extra margin */
+		border: none; /* Ensure no border is applied */
+		line-height: 1.5; /* Adjust line height to avoid extra space */
+	}
+
+	.gallery .image:hover .project-link {
+		opacity: 1; /* Show the project name on hover */
+		transform: translate(-50%, -50%);
+		background: rgba(0, 0, 0, 0.5); /* Ensure consistent background */
+		box-shadow: none; /* Ensure no shadow appears on hover */
+		margin: 0; /* Ensure no extra margin */
+		border: none; /* Ensure no border is applied */
+	}
+
+	.gallery .image .project-link:hover {
+		background: rgba(0, 0, 0, 0.5); /* Keep the same background on hover */
+		box-shadow: none; /* Ensure no shadow appears on hover */
+		text-decoration: none; /* Prevent underline on hover */
+		margin: 0; /* Ensure no extra margin */
+		border: none; /* Ensure no border is applied */
+		line-height: 1.5; /* Adjust line height to avoid extra space */
+	}
+
 /* Header */
 
 	#header {
@@ -2364,4 +2409,8 @@ input, select, textarea {
     margin-bottom: 0.5em; /* Add spacing between list items */
     text-align: justify; /* Justify the text */
     line-height: 1.6; /* Improve readability */
+}
+
+#work h3 strong {
+    font-size: 1.5em; /* Adjust the size as needed */
 }
