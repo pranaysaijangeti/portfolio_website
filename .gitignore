@@ -31,6 +31,3 @@ Thumbs.db
 *.class
 *.pyc
 *.o
-
-# Ignore images and assets (optional, if not needed in the repo)
-images/thumbs/
