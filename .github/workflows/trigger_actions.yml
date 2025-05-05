@@ -1,0 +1,35 @@
+name: Trigger Actions
+
+on:
+  # Triggers the workflow on push events to any branch
+  push:
+    branches:
+      - '**' # Matches all branches
+  # Triggers the workflow on pull request events
+  pull_request:
+    branches:
+      - '**' # Matches all branches
+  # Allows manual triggering from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  trigger-actions:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Example of running a script when triggered
+      - name: Execute a script
+        run: |
+          echo "This workflow has been triggered!"
+          echo "Repository: ${{ github.repository }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "Branch: ${{ github.ref_name }}"
+
+      # Example of adding more commands
+      - name: Additional commands
+        run: |
+          echo "You can add more actions here to build, test, or deploy your project."
